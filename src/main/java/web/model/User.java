@@ -7,19 +7,19 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @Column(name = "firstname")
     private String firstName;
     @Column(name = "secondname")
     private String secondName;
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     public User() {
 
     }
 
-    public User(String firstName, String secondName, int age) {
+    public User(String firstName, String secondName, Integer age) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.age = age;
@@ -50,11 +50,11 @@ public class User {
         return secondName;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 

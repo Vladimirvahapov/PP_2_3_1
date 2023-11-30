@@ -1,13 +1,11 @@
 package web.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import web.dao.UsersDao;
 import web.model.User;
 
 import java.util.List;
 
-@Transactional
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -18,17 +16,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void createUser(User user) {
-        usersDao.createUser(user);
-    }
-
-    @Override
     public List<User> getAllUsers() {
         return usersDao.getAllUsers();
     }
 
     @Override
-    public User getUserById(int id) {
+    public User getUserById(Integer id) {
         return usersDao.getUserById(id);
     }
 
@@ -38,7 +31,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteUserById(int id) {
+    public void createUser(User user) {
+        usersDao.createUser(user);
+    }
+
+    @Override
+    public void deleteUserById(Integer id) {
         usersDao.deleteUserById(id);
     }
 }

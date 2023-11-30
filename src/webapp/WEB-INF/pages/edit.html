@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Добавление пользователя</title>
+    <title>Редактирование пользователя</title>
     <style>
         form {
             display: flex;
@@ -20,7 +20,8 @@
     </style>
 </head>
 <body>
-<form th:method="POST" th:action="@{/createUser}" th:object="${user}">
+<form th:method="POST" th:action="@{/updateUser}" th:object="${user}">
+    <input type="hidden" th:field="*{id}" />
     <label for="firstname">Введите имя: </label>
     <input type="text" th:field="*{firstName}" th:value="${user.getFirstName()}"  id="firstname">
     <label for="secondName">Введите фамилию: </label>

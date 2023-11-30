@@ -9,9 +9,9 @@ public interface UsersDao {
 
     List<User> getAllUsers();
 
-    User getUserById(int id);
+    User getUserById(Integer id);
 
     void updateUser(User user);
 
-    void deleteUserById(int id);
+    void deleteUserById(Integer id);
 }
